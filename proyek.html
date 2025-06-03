@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SafeKota - Camera</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="safekota.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <style>
+        .camera-container {
+            position: relative;
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        #camera-view {
+            width: 100%;
+            transform: scaleX(-1);
+        }
+        .camera-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .control-btn {
+            background: rgba(22, 163, 74, 0.9);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .control-btn:hover {
+            background: rgba(22, 163, 74, 1);
+        }
+        #captured-image {
+            max-width: 100%;
+            border-radius: 8px;
+            display: none;
+        }
+        .detection-box {
+            position: absolute;
+            border: 2px solid red;
+            background: rgba(255, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .detection-label {
+            background: red;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-top: -25px;
+            white-space: nowrap;
+        }
+
+        #detection-container {
+            position: relative;
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-green-600">SafeKota</h1>
+            <nav class="space-x-4">
+                <a href="safekota.html" class="menu-link">Home</a>
+                <a href="lapor.html" class="menu-link">Lapor</a>
+                <a href="proyek.html" class="menu-link">Camera</a>
+                <a href="aboutme.html" class="menu-link">About</a>
+                <a href="edukasi.html" class="menu-link">Edukasi</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="py-16 px-4">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-semibold mb-8 text-center text-green-700">Ambil Foto</h2>
+            
+            <div class="camera-container">
+                <video id="camera-view" autoplay playsinline></video>
+                <div class="camera-controls">
+                    <button id="capture-btn" class="control-btn">Ambil Gambar</button>
+                    <button id="switch-camera" class="control-btn">Ganti Kamera</button>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <canvas id="capture-canvas" class="hidden"></canvas>
+                <img id="captured-image" alt="Hasil foto" class="mx-auto mb-4 rounded-lg shadow-lg max-w-full" style="display: none;" />
+                <a id="download-link" download="safekota-image.png" class="hidden bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition inline-block">
+                    Download Gambar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-green-600 text-white py-6 text-center">
+        <p>&copy; 2025 SafeKota. Dibuat untuk mendukung SDG 11 - Kota Berkelanjutan.</p>
+    </footer>
+
+    <script src="camera.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SafeKota - Edukasi SDG 11</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="safekota.css" />
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <header class="bg-white shadow sticky top-0 z-50">
+        <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-green-600">SafeKota</h1>
+            <nav class="space-x-4 text-sm md:space-x-6">
+                <a href="safekota.html" class="menu-link">Home</a>
+                <a href="lapor.html" class="menu-link">Lapor</a>
+                <a href="proyek.html" class="menu-link">Camera</a>
+                <a href="aboutme.html" class="menu-link">About</a>
+                <a href="edukasi.html" class="menu-link">Edukasi</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="py-16 px-4 md:px-8 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-green-700 mb-12">Pembelajaran SDG 11</h2>
+
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6">Video Pengantar SDG 11</h3>
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe class="w-full h-96" src="https://www.youtube.com/embed/lDxf9Ht1vp0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-4">Pengelolaan Sampah 3R</h3>
+                    <img src="assets/edukasi/3r-infographic.jpg" alt="Infografis 3R" class="rounded-lg mb-4">
+                    <p class="text-gray-600">Pelajari cara menerapkan Reduce, Reuse, dan Recycle dalam kehidupan sehari-hari.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-4">Tips Hemat Energi</h3>
+                    <img src="assets/edukasi/energy-saving.jpg" alt="Tips Hemat Energi" class="rounded-lg mb-4">
+                    <p class="text-gray-600">Praktikkan cara menghemat energi untuk kota yang lebih berkelanjutan.</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-lg shadow mb-16">
+                <h3 class="text-2xl font-semibold mb-6">Kuis SDG 11</h3>
+                <div id="quiz-container">
+                    <div id="question" class="text-lg mb-4"></div>
+                    <div id="options" class="space-y-3"></div>
+                    <div id="result" class="mt-4 hidden"></div>
+                    <button id="next-btn" class="bg-green-600 text-white px-6 py-3 rounded mt-6 hidden">Pertanyaan Selanjutnya</button>
+                    <div id="score" class="mt-4 text-xl font-bold hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-green-600 text-white py-6 text-center">
+        <p>&copy; 2025 SafeKota. Dibuat untuk mendukung SDG 11 - Kota Berkelanjutan.</p>
+    </footer>
+
+    <script src="edukasi.js"></script>
+</body>
+</html>
